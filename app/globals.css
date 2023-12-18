@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,22 +8,68 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --Color-3:#000;
+  --Color-2:#358E9C;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body{
+  font-family: "Cairo";
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.NavLink{
+  color: var(--Color-3);
+  font-family: "Cairo";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  transition: all .2s ;
+
+}
+
+.NavLink:hover{
+  color: var(--Color-2);
+  border-bottom: 3px solid var(--Color-2);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.journey-before::before{
+content: "";
+position: absolute;
+height: 100%;
+width: 1px;
+top: 0;
+left: -40px;
+background-color: var(--Color-2);
+
+}
+.footer{
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Card::before{
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  height: 80%;
+  width: 60%;
+  background-color: var(--Color-2);
+  z-index: -1;
+}
+
+.circle-before::before{
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  top: 0;
+  left: -53.5px;
+  background-color: var(--Color-2); 
 }
